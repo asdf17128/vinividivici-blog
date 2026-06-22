@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>Yuan Zhan</title>
+    <link>https://blog.vinividivici.top/</link>
+    <description>Technical notes from products I am actually shipping.</description>
+    <language>en</language>
+    <lastBuildDate>Mon, 22 Jun 2026 00:00:00 +0800</lastBuildDate>
+    <item>
+      <title>Building bili-webos for the living room</title>
+      <link>https://blog.vinividivici.top/posts/building-bili-webos.html</link>
+      <guid>https://blog.vinividivici.top/posts/building-bili-webos.html</guid>
+      <pubDate>Mon, 22 Jun 2026 00:00:00 +0800</pubDate>
+      <description>Notes on building an open-source Bilibili client for LG webOS TVs.</description>
+    </item>
+    <item>
+      <title>A Claude Code skill for LG webOS app work</title>
+      <link>https://blog.vinividivici.top/posts/webos-tv-app-skill.html</link>
+      <guid>https://blog.vinividivici.top/posts/webos-tv-app-skill.html</guid>
+      <pubDate>Thu, 18 Jun 2026 00:00:00 +0800</pubDate>
+      <description>Why a repeatable webOS development workflow belongs in a small skill.</description>
+    </item>
+    <item>
+      <title>wechat-cli: boring automation is the point</title>
+      <link>https://blog.vinividivici.top/posts/wechat-cli-automation.html</link>
+      <guid>https://blog.vinividivici.top/posts/wechat-cli-automation.html</guid>
+      <pubDate>Wed, 10 Jun 2026 00:00:00 +0800</pubDate>
+      <description>Notes on a single-file Python tool for WeChat automation through WebDriverAgent.</description>
+    </item>
+  </channel>
+</rss>

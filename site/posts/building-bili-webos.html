@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Building bili-webos for the living room - Yuan Zhan</title>
+    <meta name="description" content="Notes on building bili-webos, an open-source Bilibili client for LG webOS TVs.">
+    <link rel="stylesheet" href="../assets/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="../index.html">Yuan Zhan</a>
+        <div class="nav-links">
+          <a href="../projects.html">Projects</a>
+          <a href="../about.html">About</a>
+          <a href="../rss.xml">RSS</a>
+          <a class="pill-link" href="https://github.com/asdf17128/bili-webos">Repo</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="article">
+      <header class="article-header">
+        <p class="eyebrow">Smart TV</p>
+        <h1>Building bili-webos for the living room</h1>
+        <div class="byline">
+          <img src="https://avatars.githubusercontent.com/u/7056394?v=4" alt="Yuan Zhan GitHub avatar" width="42" height="42">
+          <span>Yuan Zhan · Jun 22, 2026 · 5 min read</span>
+        </div>
+      </header>
+
+      <article class="article-content">
+        <p><a href="https://github.com/asdf17128/bili-webos">bili-webos</a> started from a simple requirement: Bilibili should feel natural on an LG webOS TV, not like a desktop website squeezed into a ten-foot interface.</p>
+        <p>The project is a React application for webOS Homebrew. The public repository describes the goal directly: Bilibili playback on LG webOS TVs, DASH up to 4K/HDR, danmaku, bangumi, live video, and a remote-driven interface.</p>
+
+        <h2>Remote-first changes the product</h2>
+        <p>A TV app cannot assume precise pointer control or a keyboard. The most important interactions need to be visible, reachable, and predictable from directional navigation. That affects screen density, focus states, loading behavior, and how much text belongs on a single surface.</p>
+        <p>My current bias is to keep the main playback path short: choose content, confirm quality, start playback, and make the overlay controls easy to recover without hunting.</p>
+
+        <h2>Playback is the hard center</h2>
+        <p>Video apps are mostly judged by what happens after the user presses play. DASH streams, quality fallback, subtitle-like danmaku layers, and TV hardware limits all meet in that moment.</p>
+        <p class="note">The implementation goal is not to copy a mobile app. It is to respect the living room context: less friction, clear focus, and playback that survives imperfect network and device conditions.</p>
+
+        <h2>What I am watching next</h2>
+        <ul>
+          <li>Making navigation more predictable across every screen.</li>
+          <li>Improving playback diagnostics without exposing developer noise to normal users.</li>
+          <li>Documenting install and release steps clearly enough for non-expert TV users.</li>
+        </ul>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span>© 2026 Yuan Zhan</span>
+        <span><a href="../index.html">Home</a> · <a href="../projects.html">Projects</a></span>
+      </div>
+    </footer>
+  </body>
+</html>

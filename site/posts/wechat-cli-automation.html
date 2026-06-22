@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>wechat-cli: boring automation is the point - Yuan Zhan</title>
+    <meta name="description" content="Notes on wechat-cli, a single-file Python tool for sending WeChat messages through WebDriverAgent.">
+    <link rel="stylesheet" href="../assets/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="../index.html">Yuan Zhan</a>
+        <div class="nav-links">
+          <a href="../projects.html">Projects</a>
+          <a href="../about.html">About</a>
+          <a href="../rss.xml">RSS</a>
+          <a class="pill-link" href="https://github.com/asdf17128/wechat-cli">Repo</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="article">
+      <header class="article-header">
+        <p class="eyebrow">Automation</p>
+        <h1>wechat-cli: boring automation is the point</h1>
+        <div class="byline">
+          <img src="https://avatars.githubusercontent.com/u/7056394?v=4" alt="Yuan Zhan GitHub avatar" width="42" height="42">
+          <span>Yuan Zhan · Jun 10, 2026 · 4 min read</span>
+        </div>
+      </header>
+
+      <article class="article-content">
+        <p><a href="https://github.com/asdf17128/wechat-cli">wechat-cli</a> sends a WeChat message to a chat by name through WebDriverAgent on a tethered iPhone. It is intentionally a single-file Python tool with no LLM in the loop.</p>
+        <p>That shape matters. Some automation work does not need a service, a scheduler, an agent, or a model. It needs a small command that performs the same mechanical task every time.</p>
+
+        <h2>Keep the dependency surface small</h2>
+        <p>For personal tools, the most valuable design choice is often what not to add. A smaller dependency surface is easier to audit, easier to run on a clean machine, and less likely to surprise you months later.</p>
+        <p>wechat-cli follows that principle: connect to the device automation layer, find the target chat, type the message, and send it.</p>
+
+        <h2>Make the boring path reliable</h2>
+        <p>The point is not to make chat automation glamorous. The point is to turn a repeated manual action into a predictable command while keeping enough visibility to debug device or UI changes.</p>
+        <p class="note">Automation is most useful when it remains understandable after the novelty wears off.</p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span>© 2026 Yuan Zhan</span>
+        <span><a href="../index.html">Home</a> · <a href="../projects.html">Projects</a></span>
+      </div>
+    </footer>
+  </body>
+</html>
