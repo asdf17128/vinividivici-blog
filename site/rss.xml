@@ -7,6 +7,20 @@
     <language>en</language>
     <lastBuildDate>Mon, 22 Jun 2026 00:00:00 +0800</lastBuildDate>
     <item>
+      <title>scenic-roads: finding better weekend drives</title>
+      <link>https://blog.vinividivici.top/posts/scenic-roads.html</link>
+      <guid>https://blog.vinividivici.top/posts/scenic-roads.html</guid>
+      <pubDate>Mon, 22 Jun 2026 00:00:00 +0800</pubDate>
+      <description>Notes on a Hangzhou-centered route discovery MVP using OSM roads and DEM elevation data.</description>
+    </item>
+    <item>
+      <title>claude-code-review: a second reviewer inside Codex</title>
+      <link>https://blog.vinividivici.top/posts/claude-code-review.html</link>
+      <guid>https://blog.vinividivici.top/posts/claude-code-review.html</guid>
+      <pubDate>Mon, 22 Jun 2026 00:00:00 +0800</pubDate>
+      <description>Notes on a Codex plugin that delegates review and investigation to the local Claude Code CLI.</description>
+    </item>
+    <item>
       <title>Building bili-webos for the living room</title>
       <link>https://blog.vinividivici.top/posts/building-bili-webos.html</link>
       <guid>https://blog.vinividivici.top/posts/building-bili-webos.html</guid>

@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>claude-code-review: a second reviewer inside Codex - Siyuan</title>
+    <meta name="description" content="Notes on claude-code-review, a Codex plugin that asks the local Claude Code CLI for external review and delegated rescue work.">
+    <link rel="stylesheet" href="../assets/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="../index.html">Siyuan</a>
+        <div class="nav-links">
+          <a href="../projects.html">Projects</a>
+          <a href="../about.html">About</a>
+          <a href="../rss.xml">RSS</a>
+          <a class="pill-link" href="https://github.com/asdf17128/claude-code-review">Repo</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="article">
+      <header class="article-header">
+        <p class="eyebrow">AI tooling</p>
+        <h1>claude-code-review: a second reviewer inside Codex</h1>
+        <div class="byline">
+          <img src="https://avatars.githubusercontent.com/u/7056394?v=4" alt="GitHub avatar" width="42" height="42">
+          <span>Published Jun 22, 2026 · 4 min read</span>
+        </div>
+      </header>
+
+      <article class="article-content">
+        <p><a href="https://github.com/asdf17128/claude-code-review">claude-code-review</a> is a Codex plugin that lets Codex ask the local Claude Code CLI for external review, adversarial critique, and delegated investigation work.</p>
+        <p>The motivation is practical: sometimes the fastest way to find weak assumptions in a change is to route the diff through a second reviewer with a different toolchain.</p>
+
+        <h2>Review without handing over control</h2>
+        <p>The default review path is read-only. It can inspect staged, unstaged, untracked, or branch diffs and return findings without editing the working tree. A separate explicit task mode exists for write-capable rescue work.</p>
+        <p>That boundary matters because review should be easy to request without worrying that the reviewer will rewrite unrelated files.</p>
+
+        <h2>Why package it as a plugin</h2>
+        <p>A one-off shell command is easy to forget. A Codex plugin can encode setup checks, review modes, background job status, cancellation, and result retrieval into a repeatable workflow.</p>
+        <p class="note">The project is less about model novelty and more about engineering workflow: make a second opinion cheap enough to use before the expensive mistake ships.</p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span>© 2026 Siyuan</span>
+        <span><a href="../index.html">Home</a> · <a href="../projects.html">Projects</a></span>
+      </div>
+    </footer>
+  </body>
+</html>

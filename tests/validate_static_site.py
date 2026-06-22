@@ -18,6 +18,8 @@ REQUIRED_FILES = [
     "rss.xml",
     "assets/styles.css",
     "posts/building-bili-webos.html",
+    "posts/claude-code-review.html",
+    "posts/scenic-roads.html",
     "posts/webos-tv-app-skill.html",
     "posts/wechat-cli-automation.html",
     "nginx/blog.vinividivici.top.conf",
@@ -30,11 +32,15 @@ REQUIRED_TEXT = {
         "Siyuan",
         "blog.vinividivici.top",
         "bili-webos",
+        "claude-code-review",
+        "scenic-roads",
         "webos-tv-app-skill",
         "wechat-cli",
     ],
     "projects.html": [
         "https://github.com/asdf17128/bili-webos",
+        "https://github.com/asdf17128/claude-code-review",
+        "https://github.com/asdf17128/scenic-roads",
         "https://github.com/asdf17128/webos-tv-app-skill",
         "https://github.com/asdf17128/wechat-cli",
     ],
@@ -157,8 +163,8 @@ def assert_feed() -> list[str]:
         return ["missing rss.xml"]
     content = read(feed)
     urls = re.findall(r"<link>(https://blog\.vinividivici\.top/?[^<]*)</link>", content)
-    if len(urls) < 4:
-        return ["rss.xml should expose homepage and at least three articles"]
+    if len(urls) < 6:
+        return ["rss.xml should expose homepage and at least five articles"]
     return []
 
 

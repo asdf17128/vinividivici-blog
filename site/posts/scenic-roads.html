@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>scenic-roads: finding better weekend drives - Siyuan</title>
+    <meta name="description" content="Notes on scenic-roads, a Hangzhou-centered MVP for finding twisty mountain roads and weekend driving routes.">
+    <link rel="stylesheet" href="../assets/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <nav class="nav" aria-label="Primary navigation">
+        <a class="brand" href="../index.html">Siyuan</a>
+        <div class="nav-links">
+          <a href="../projects.html">Projects</a>
+          <a href="../about.html">About</a>
+          <a href="../rss.xml">RSS</a>
+          <a class="pill-link" href="https://github.com/asdf17128/scenic-roads">Repo</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="article">
+      <header class="article-header">
+        <p class="eyebrow">Maps</p>
+        <h1>scenic-roads: finding better weekend drives</h1>
+        <div class="byline">
+          <img src="https://avatars.githubusercontent.com/u/7056394?v=4" alt="GitHub avatar" width="42" height="42">
+          <span>Published Jun 22, 2026 · 4 min read</span>
+        </div>
+      </header>
+
+      <article class="article-content">
+        <p><a href="https://github.com/asdf17128/scenic-roads">scenic-roads</a> is a Hangzhou-centered road discovery MVP for finding interesting weekend routes: 弯路, 山路, climb, and enough distance to be worth a drive.</p>
+        <p>The pipeline combines OpenStreetMap road data, Copernicus DEM elevation tiles, settlement and POI context, and a scoring model that favors twistiness, climb, road length, and useful route labels.</p>
+
+        <h2>From map data to candidate roads</h2>
+        <p>The project pulls roads around Hangzhou, filters for rural and mountainous highway types, merges named fragments, densifies polylines, and samples elevation along each route.</p>
+        <p>Each candidate route is scored by turn density, climb per kilometer, length, and map metadata. The output is rendered as GeoJSON plus interactive HTML maps so the result can be inspected visually.</p>
+
+        <h2>Why this is a product problem</h2>
+        <p>Search engines and map apps are good at finding destinations. They are less good at answering a more specific question: which roads near me are actually fun to drive this weekend?</p>
+        <p class="note">The MVP turns that fuzzy question into a repeatable data pipeline: collect roads, score route shape, render the shortlist, then iterate against real trips.</p>
+      </article>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <span>© 2026 Siyuan</span>
+        <span><a href="../index.html">Home</a> · <a href="../projects.html">Projects</a></span>
+      </div>
+    </footer>
+  </body>
+</html>
