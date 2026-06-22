@@ -1,4 +1,4 @@
-# Yuan Zhan Technical Blog
+# Siyuan Technical Blog
 
 Static files for `https://blog.vinividivici.top`.
 

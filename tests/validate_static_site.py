@@ -27,7 +27,7 @@ REQUIRED_FILES = [
 
 REQUIRED_TEXT = {
     "index.html": [
-        "Yuan Zhan",
+        "Siyuan",
         "blog.vinividivici.top",
         "bili-webos",
         "webos-tv-app-skill",
@@ -48,6 +48,11 @@ REQUIRED_TEXT = {
         "/var/www/blog/",
     ],
 }
+
+FORBIDDEN_TEXT = [
+    "Yuan" + " Zhan",
+    "yuan" + "zhan",
+]
 
 
 class LinkParser(HTMLParser):
@@ -103,6 +108,21 @@ def assert_required_text() -> list[str]:
     return errors
 
 
+def assert_forbidden_text_absent() -> list[str]:
+    errors = []
+    for path in sorted(ROOT.rglob("*")):
+        if ".git" in path.parts or not path.is_file():
+            continue
+        try:
+            content = read(path)
+        except UnicodeDecodeError:
+            continue
+        for snippet in FORBIDDEN_TEXT:
+            if snippet in content:
+                errors.append(f"{path.relative_to(ROOT)} contains forbidden text: {snippet}")
+    return errors
+
+
 def resolve_link(source: Path, href: str) -> Path | None:
     parsed = urlparse(href)
     if parsed.scheme or href.startswith("#") or href.startswith("mailto:"):
@@ -146,6 +166,7 @@ def main() -> int:
     checks = [
         assert_exists,
         assert_required_text,
+        assert_forbidden_text_absent,
         assert_html_links,
         assert_feed,
     ]
