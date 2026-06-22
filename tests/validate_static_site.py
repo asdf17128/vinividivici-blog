@@ -68,6 +68,9 @@ ARTICLE_DATES = {
     "posts/claude-code-review.html": ("May 6, 2026", "Wed, 06 May 2026"),
 }
 
+GOOGLE_AVATAR = "https://lh3.googleusercontent.com/a/ACg8ocIx_oHzmocFPwcHRI2j873ZTjMzYc1Z7jvggXq8jN-56OmH4BxE=s96-c"
+OLD_GITHUB_AVATAR = "https://avatars.githubusercontent.com/u/7056394?v=4"
+
 
 class LinkParser(HTMLParser):
     def __init__(self) -> None:
@@ -203,6 +206,21 @@ def assert_project_timeline_dates() -> list[str]:
     return errors
 
 
+def assert_google_avatar() -> list[str]:
+    errors = []
+    html_files = [SITE / "index.html", SITE / "about.html", *sorted((SITE / "posts").glob("*.html"))]
+    for path in html_files:
+        html = read(path)
+        relative = path.relative_to(SITE)
+        if OLD_GITHUB_AVATAR in html:
+            errors.append(f"{relative} still uses GitHub avatar")
+        if GOOGLE_AVATAR not in html:
+            errors.append(f"{relative} missing Google avatar")
+        if "GitHub avatar" in html:
+            errors.append(f"{relative} still has GitHub avatar alt text")
+    return errors
+
+
 def main() -> int:
     checks = [
         assert_exists,
@@ -211,6 +229,7 @@ def main() -> int:
         assert_html_links,
         assert_feed,
         assert_project_timeline_dates,
+        assert_google_avatar,
     ]
     errors: list[str] = []
     for check in checks:
