@@ -7,39 +7,39 @@
     <language>en</language>
     <lastBuildDate>Mon, 22 Jun 2026 00:00:00 +0800</lastBuildDate>
     <item>
-      <title>scenic-roads: finding better weekend drives</title>
-      <link>https://blog.vinividivici.top/posts/scenic-roads.html</link>
-      <guid>https://blog.vinividivici.top/posts/scenic-roads.html</guid>
-      <pubDate>Mon, 22 Jun 2026 00:00:00 +0800</pubDate>
-      <description>Notes on a Hangzhou-centered route discovery MVP using OSM roads and DEM elevation data.</description>
-    </item>
-    <item>
-      <title>claude-code-review: a second reviewer inside Codex</title>
-      <link>https://blog.vinividivici.top/posts/claude-code-review.html</link>
-      <guid>https://blog.vinividivici.top/posts/claude-code-review.html</guid>
-      <pubDate>Mon, 22 Jun 2026 00:00:00 +0800</pubDate>
-      <description>Notes on a Codex plugin that delegates review and investigation to the local Claude Code CLI.</description>
-    </item>
-    <item>
       <title>Building bili-webos for the living room</title>
       <link>https://blog.vinividivici.top/posts/building-bili-webos.html</link>
       <guid>https://blog.vinividivici.top/posts/building-bili-webos.html</guid>
-      <pubDate>Mon, 22 Jun 2026 00:00:00 +0800</pubDate>
+      <pubDate>Sun, 21 Jun 2026 00:00:00 +0800</pubDate>
       <description>Notes on building an open-source Bilibili client for LG webOS TVs.</description>
     </item>
     <item>
       <title>A Claude Code skill for LG webOS app work</title>
       <link>https://blog.vinividivici.top/posts/webos-tv-app-skill.html</link>
       <guid>https://blog.vinividivici.top/posts/webos-tv-app-skill.html</guid>
-      <pubDate>Thu, 18 Jun 2026 00:00:00 +0800</pubDate>
+      <pubDate>Sat, 13 Jun 2026 00:00:00 +0800</pubDate>
       <description>Why a repeatable webOS development workflow belongs in a small skill.</description>
     </item>
     <item>
       <title>wechat-cli: boring automation is the point</title>
       <link>https://blog.vinividivici.top/posts/wechat-cli-automation.html</link>
       <guid>https://blog.vinividivici.top/posts/wechat-cli-automation.html</guid>
-      <pubDate>Wed, 10 Jun 2026 00:00:00 +0800</pubDate>
+      <pubDate>Tue, 09 Jun 2026 00:00:00 +0800</pubDate>
       <description>Notes on a single-file Python tool for WeChat automation through WebDriverAgent.</description>
+    </item>
+    <item>
+      <title>scenic-roads: finding better weekend drives</title>
+      <link>https://blog.vinividivici.top/posts/scenic-roads.html</link>
+      <guid>https://blog.vinividivici.top/posts/scenic-roads.html</guid>
+      <pubDate>Mon, 18 May 2026 00:00:00 +0800</pubDate>
+      <description>Notes on a Hangzhou-centered route discovery MVP using OSM roads and DEM elevation data.</description>
+    </item>
+    <item>
+      <title>claude-code-review: a second reviewer inside Codex</title>
+      <link>https://blog.vinividivici.top/posts/claude-code-review.html</link>
+      <guid>https://blog.vinividivici.top/posts/claude-code-review.html</guid>
+      <pubDate>Wed, 06 May 2026 00:00:00 +0800</pubDate>
+      <description>Notes on a Codex plugin that delegates review and investigation to the local Claude Code CLI.</description>
     </item>
   </channel>
 </rss>

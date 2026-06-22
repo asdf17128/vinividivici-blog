@@ -60,6 +60,14 @@ FORBIDDEN_TEXT = [
     "yuan" + "zhan",
 ]
 
+ARTICLE_DATES = {
+    "posts/building-bili-webos.html": ("Jun 21, 2026", "Sun, 21 Jun 2026"),
+    "posts/webos-tv-app-skill.html": ("Jun 13, 2026", "Sat, 13 Jun 2026"),
+    "posts/wechat-cli-automation.html": ("Jun 9, 2026", "Tue, 09 Jun 2026"),
+    "posts/scenic-roads.html": ("May 18, 2026", "Mon, 18 May 2026"),
+    "posts/claude-code-review.html": ("May 6, 2026", "Wed, 06 May 2026"),
+}
+
 
 class LinkParser(HTMLParser):
     def __init__(self) -> None:
@@ -168,6 +176,33 @@ def assert_feed() -> list[str]:
     return []
 
 
+def assert_project_timeline_dates() -> list[str]:
+    errors = []
+    index = read(SITE / "index.html")
+    feed = read(SITE / "rss.xml")
+    sitemap = read(SITE / "sitemap.xml")
+    for relative, (display_date, rss_date) in ARTICLE_DATES.items():
+        article = read(SITE / relative)
+        iso_date = {
+            "Jun 21, 2026": "2026-06-21",
+            "Jun 13, 2026": "2026-06-13",
+            "Jun 9, 2026": "2026-06-09",
+            "May 18, 2026": "2026-05-18",
+            "May 6, 2026": "2026-05-06",
+        }[display_date]
+        if display_date not in article:
+            errors.append(f"{relative} missing project date {display_date}")
+        if display_date not in index:
+            errors.append(f"index.html missing project date {display_date}")
+        if rss_date not in feed:
+            errors.append(f"rss.xml missing project pubDate {rss_date}")
+        sitemap_url = f"https://blog.vinividivici.top/{relative}"
+        sitemap_entry = f"<loc>{sitemap_url}</loc>\n    <lastmod>{iso_date}</lastmod>"
+        if sitemap_entry not in sitemap:
+            errors.append(f"sitemap.xml missing {relative} lastmod {iso_date}")
+    return errors
+
+
 def main() -> int:
     checks = [
         assert_exists,
@@ -175,6 +210,7 @@ def main() -> int:
         assert_forbidden_text_absent,
         assert_html_links,
         assert_feed,
+        assert_project_timeline_dates,
     ]
     errors: list[str] = []
     for check in checks:
