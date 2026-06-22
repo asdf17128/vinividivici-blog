@@ -47,7 +47,7 @@ python3 tests/validate_static_site.py
 
 ## Deploy To VPS
 
-The default deploy target is `root@192.129.183.208:/var/www/blog/`.
+The default deploy target is `root@192.129.183.208:/var/www/blog/` over SSH port `2221`.
 
 ```bash
 blog/scripts/deploy-blog.sh
@@ -57,6 +57,12 @@ Override the target when needed:
 
 ```bash
 BLOG_REMOTE=root@example.com BLOG_REMOTE_DIR=/var/www/blog/ blog/scripts/deploy-blog.sh
+```
+
+Override the SSH port when needed:
+
+```bash
+BLOG_SSH_PORT=22 blog/scripts/deploy-blog.sh
 ```
 
 nginx does not need to restart for content updates. Only reload nginx after changing the config file:
