@@ -9,6 +9,7 @@ REMOTE="${BLOG_REMOTE:-root@192.129.183.208}"
 REMOTE_DIR="${BLOG_REMOTE_DIR:-/var/www/blog/}"
 SSH_PORT="${BLOG_SSH_PORT:-2221}"
 RSYNC_SSH="${BLOG_RSYNC_SSH:-ssh -p ${SSH_PORT}}"
+SSH_CMD=(ssh -p "${SSH_PORT}")
 
 if ! command -v rsync >/dev/null 2>&1; then
   echo "rsync is required" >&2
@@ -20,5 +21,7 @@ rsync -az --delete \
   --exclude ".DS_Store" \
   "${SITE_DIR}/" \
   "${REMOTE}:${REMOTE_DIR}"
+
+"${SSH_CMD[@]}" "${REMOTE}" "chown -R root:root '${REMOTE_DIR}' && find '${REMOTE_DIR}' -type d -exec chmod 755 {} + && find '${REMOTE_DIR}' -type f -exec chmod 644 {} +"
 
 echo "Published ${SITE_DIR} to ${REMOTE}:${REMOTE_DIR}"
