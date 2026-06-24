@@ -5,7 +5,14 @@
     <link>https://blog.vinividivici.top/</link>
     <description>Technical notes from products I am actually shipping.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 22 Jun 2026 00:00:00 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jun 2026 00:00:00 +0800</lastBuildDate>
+    <item>
+      <title>Codex SSD log writes</title>
+      <link>https://blog.vinividivici.top/posts/codex-ssd-log-writes.html</link>
+      <guid>https://blog.vinividivici.top/posts/codex-ssd-log-writes.html</guid>
+      <pubDate>Wed, 24 Jun 2026 00:00:00 +0800</pubDate>
+      <description>A short note on Codex SQLite logs and SSD write pressure.</description>
+    </item>
     <item>
       <title>Building bili-webos for the living room</title>
       <link>https://blog.vinividivici.top/posts/building-bili-webos.html</link>

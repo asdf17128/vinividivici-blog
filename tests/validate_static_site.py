@@ -17,6 +17,7 @@ REQUIRED_FILES = [
     "about.html",
     "rss.xml",
     "assets/styles.css",
+    "posts/codex-ssd-log-writes.html",
     "posts/building-bili-webos.html",
     "posts/claude-code-review.html",
     "posts/scenic-roads.html",
@@ -61,6 +62,7 @@ FORBIDDEN_TEXT = [
 ]
 
 ARTICLE_DATES = {
+    "posts/codex-ssd-log-writes.html": ("Jun 24, 2026", "Wed, 24 Jun 2026"),
     "posts/building-bili-webos.html": ("Jun 21, 2026", "Sun, 21 Jun 2026"),
     "posts/webos-tv-app-skill.html": ("Jun 13, 2026", "Sat, 13 Jun 2026"),
     "posts/wechat-cli-automation.html": ("Jun 9, 2026", "Tue, 09 Jun 2026"),
@@ -188,6 +190,7 @@ def assert_project_timeline_dates() -> list[str]:
         article = read(SITE / relative)
         iso_date = {
             "Jun 21, 2026": "2026-06-21",
+            "Jun 24, 2026": "2026-06-24",
             "Jun 13, 2026": "2026-06-13",
             "Jun 9, 2026": "2026-06-09",
             "May 18, 2026": "2026-05-18",
@@ -204,6 +207,18 @@ def assert_project_timeline_dates() -> list[str]:
         if sitemap_entry not in sitemap:
             errors.append(f"sitemap.xml missing {relative} lastmod {iso_date}")
     return errors
+
+
+def assert_short_codex_note() -> list[str]:
+    article = read(SITE / "posts/codex-ssd-log-writes.html")
+    match = re.search(r'<article class="article-content">(.*?)</article>', article, re.S)
+    if not match:
+        return ["posts/codex-ssd-log-writes.html missing article content"]
+    visible = re.sub(r"<[^>]+>", "", match.group(1))
+    visible = re.sub(r"\s+", "", visible)
+    if len(visible) > 100:
+        return [f"posts/codex-ssd-log-writes.html body is {len(visible)} chars, expected <=100"]
+    return []
 
 
 def assert_google_avatar() -> list[str]:
@@ -229,6 +244,7 @@ def main() -> int:
         assert_html_links,
         assert_feed,
         assert_project_timeline_dates,
+        assert_short_codex_note,
         assert_google_avatar,
     ]
     errors: list[str] = []

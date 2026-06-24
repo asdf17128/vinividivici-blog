@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://blog.vinividivici.top/</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-06-24</lastmod>
   </url>
   <url>
     <loc>https://blog.vinividivici.top/projects.html</loc>
@@ -11,6 +11,10 @@
   <url>
     <loc>https://blog.vinividivici.top/about.html</loc>
     <lastmod>2026-06-22</lastmod>
+  </url>
+  <url>
+    <loc>https://blog.vinividivici.top/posts/codex-ssd-log-writes.html</loc>
+    <lastmod>2026-06-24</lastmod>
   </url>
   <url>
     <loc>https://blog.vinividivici.top/posts/building-bili-webos.html</loc>
